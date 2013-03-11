@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use 5.010001;
+use strict;
+use warnings;
+use Perinci::CmdLine 0.68;
+
+Perinci::CmdLine->new(url => '/App/smtpstatus/list_smtp_statuses')->run;
+
+1;
+# ABSTRACT: List SMTP statuses
+# PODNAME: smtpstatus
