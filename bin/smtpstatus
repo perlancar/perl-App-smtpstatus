@@ -5,7 +5,54 @@ use strict;
 use warnings;
 use Perinci::CmdLine 0.68;
 
-Perinci::CmdLine->new(url => '/App/smtpstatus/list_smtp_statuses')->run;
+# VERSION
+
+our %SPEC;
+
+$SPEC{smtpstatus} = {
+    v => 1.1,
+    summary => 'List SMTP statuses',
+    args => {
+        query => {
+            summary     => 'Search query',
+            schema      => ['str*'],
+            description => <<'_',
+
+To search for a specific code: `4.` or `x.1` or `.1.4`.
+
+To search in summary or description: `bad` or `bad dest`.
+
+_
+            pos         => 0,
+        },
+        description => {
+            summary     => 'Whether to show description',
+            schema      => [bool => default => 0],
+        },
+    },
+};
+sub smtpstatus {
+    require App::smtpstatus;
+
+    my %args = @_;
+    my $q = $args{query};
+
+    my %fa;
+    $fa{with_field_names} = 1;
+    $fa{fields} = ['code', 'summary'];
+    push @{ $fa{fields} }, 'description' if $args{description};
+    if (defined $q) {
+        if ($q =~ /^\.?(\d+|x)(?:\.(\d+|x))*$/i) {
+            $fa{'code.contains'} = uc($q);
+        } else {
+            $fa{q} = $q;
+        }
+    }
+    #use Data::Dump; dd \%fa;
+    App::smtpstatus::list_smtp_statuses(%fa);
+}
+
+Perinci::CmdLine->new(url => '/main/smtpstatus')->run;
 
 1;
 # ABSTRACT: List SMTP statuses
