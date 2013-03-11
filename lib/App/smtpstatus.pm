@@ -6,6 +6,8 @@ use warnings;
 
 # VERSION
 
+# from RFC 1893
+
 our $data = [
 
     ['2.X.X', 'Success',
@@ -591,3 +593,9 @@ die "Can't generate list_smtp_statuses function: $res->[0] - $res->[1]"
 
 1;
 # ABSTRACT: List STMP statuses
+
+=head1 SEE ALSO
+
+RFC 1893
+
+=cut
