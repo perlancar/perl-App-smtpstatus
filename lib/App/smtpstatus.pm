@@ -592,7 +592,7 @@ die "Can't generate list_smtp_statuses function: $res->[0] - $res->[1]"
     unless $res->[0] == 200;
 
 1;
-# ABSTRACT: List STMP statuses
+# ABSTRACT: List SMTP statuses
 
 =head1 SEE ALSO
 
