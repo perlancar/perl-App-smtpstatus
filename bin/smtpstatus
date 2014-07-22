@@ -1,11 +1,12 @@
 #!perl
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
-use Perinci::CmdLine 0.68;
-
-# VERSION
+use Perinci::CmdLine::Any;
 
 our %SPEC;
 
@@ -52,7 +53,7 @@ sub smtpstatus {
     App::smtpstatus::list_smtp_statuses(%fa);
 }
 
-Perinci::CmdLine->new(url => '/main/smtpstatus')->run;
+Perinci::CmdLine::Any->new(url => '/main/smtpstatus')->run;
 
 1;
 # ABSTRACT: List SMTP statuses
@@ -71,16 +72,6 @@ Perinci::CmdLine->new(url => '/main/smtpstatus')->run;
 
  # Show longer description
  % smptatus 'search string' --desc
-
-
-=head1 FAQ
-
-=head2 Lots of dependencies?
-
-Yup, sorry about that. I use L<Perinci::CmdLine> and
-L<Perinci::Sub::Gen::AccessTable> for convenience, where I just specify a data
-structure and let the aforementioned modules generate an access function and
-command-line interface for it.
 
 
 =head1 TODO
