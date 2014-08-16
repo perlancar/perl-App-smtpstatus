@@ -1,5 +1,10 @@
 Revision history for App-smtpstatus
 
+0.03     2014-08-16 (SHARYANTO) - Happy 19th CPAN Day!
+
+         - Prefer using Perinci::CmdLine::Lite.
+
+
 0.02     2014-07-22 (SHARYANTO)
 
          - No functional changes.
