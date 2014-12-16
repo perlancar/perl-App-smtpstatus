@@ -57,7 +57,7 @@ Perinci::CmdLine::Any->new(url => '/main/smtpstatus')->run;
 
 1;
 # ABSTRACT: List SMTP statuses
-# PODNAME: smtpstatus
+# PODNAME:
 
 =head1 SYNOPSIS
 
