@@ -73,19 +73,3 @@ Perinci::CmdLine::Any->new(url => '/main/smtpstatus')->run;
  # Show longer description
  % smptatus 'search string' --desc
 
-
-=head1 TODO
-
-=over
-
-=item * Add implementation-specific codes (from Sendmail, qmail, Postfix, Exim, Spanel)
-
-=item * Format
-
-Use --format=text-pretty by default for interactive, set description's
-table_column_orders (after summary, not before) and table_column_formats ([[wrap
-=> {columns=>40}]]).
-
-=back
-
-=cut
