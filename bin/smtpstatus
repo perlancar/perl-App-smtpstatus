@@ -46,7 +46,7 @@ sub smtpstatus {
         if ($q =~ /^\.?(\d+|x)(?:\.(\d+|x))*$/i) {
             $fa{'code.contains'} = uc($q);
         } else {
-            $fa{q} = $q;
+            $fa{query} = $q;
         }
     }
     #use Data::Dump; dd \%fa;
@@ -72,4 +72,3 @@ Perinci::CmdLine::Any->new(url => '/main/smtpstatus')->run;
 
  # Show longer description
  % smptatus 'search string' --desc
-
