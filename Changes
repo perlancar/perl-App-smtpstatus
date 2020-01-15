@@ -25,7 +25,7 @@
 	- Rebuild (Generate TODO.md).
 
 
-0.03    2014-08-16 (SHARYANTO) - Happy 19th CPAN Day!
+0.03    2014-08-16  Released-By: SHARYANTO; Note: Happy 19th CPAN Day!
 
 	- Prefer using Perinci::CmdLine::Lite.
 
@@ -41,4 +41,5 @@
 0.01    2013-03-11  Released-By: SHARYANTO
 
 	- First release.
+
 
